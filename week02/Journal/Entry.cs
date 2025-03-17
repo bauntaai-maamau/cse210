@@ -6,9 +6,9 @@ public class Entry
     public string _prompts;
     public string _entryText;
 
-    public Entry(string prompts, string entryText)
+    public Entry(string date, string prompts, string entryText)
     {
-        _date = DateTime.Now.ToString("dd/MM/yyyy");
+        _date = date;
         _prompts = prompts;
         _entryText = entryText;
     }

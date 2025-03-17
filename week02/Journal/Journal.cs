@@ -1,4 +1,5 @@
 using System;
+using System.Transactions;
 
 public class Journal
 {
@@ -17,7 +18,8 @@ public class Journal
         Console.WriteLine($"{_prompts}");
         Console.Write("> ");
         string content = Console.ReadLine();
-        Entry newEntry = new Entry(_prompts, content);
+        string _date = DateTime.Now.ToString("dd/MM/yyyy");
+        Entry newEntry = new Entry(_date, _prompts, content);
         entries.Add(newEntry);
         newEntry.Display();
     }
@@ -56,17 +58,35 @@ public class Journal
             {
                 while (!reader.EndOfStream)
                 {
+                    // Read Date, Prompt, and Content (Entry Text)
                     string dateString = reader.ReadLine();
+                    string promptString = reader.ReadLine();
                     string content = reader.ReadLine();
-                    Entry entry = new Entry(dateString, content);
-                    entries.Add(entry);
+
+                    // Skip empty line after each entry if present
+                    reader.ReadLine();
+
+                    // Ensure all lines are valid
+                    if (dateString != null && promptString != null && content != null)
+                    {
+                        // Strip the "Date:", "Prompt:", and "Entry:" prefixes
+                        dateString = dateString.Replace("Date: ", "").Trim();
+                        promptString = promptString.Replace("Prompt: ", "").Trim();
+                        content = content.Replace("Entry: ", "").Trim();
+
+                        // Create a new Entry object and add it to the list
+                        Entry entry = new Entry(dateString, promptString, content);
+                        entries.Add(entry);
+                    }
                 }
             }
         }
         catch
         {
-            Console.WriteLine($"Error loading entries, check filename again. ");
+            Console.WriteLine("Error loading entries: File not found. Please check the filename.");
         }
     }
-}
 
+
+
+}
