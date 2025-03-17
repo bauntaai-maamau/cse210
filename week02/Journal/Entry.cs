@@ -8,7 +8,7 @@ public class Entry
 
     public Entry(string _promtText, string _entryText)
     {
-        _date = DateTime.Now.ToString("yyyyy-MM-dd");
+        _date = DateTime.Now.ToString("dd/MM/yyyy");
     }
 
     public void Display()
