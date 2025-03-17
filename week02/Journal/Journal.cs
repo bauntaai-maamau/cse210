@@ -14,7 +14,7 @@ public class Journal
     public void AddEntry()
     {
         string _prompts = promptGenerator.GenerateRandomPrompt();
-        Console.WriteLine($"Today's Prompt: {_prompts}");
+        Console.WriteLine($"{_prompts}");
         Console.Write("> ");
         string content = Console.ReadLine();
         Entry newEntry = new Entry(_prompts, content);
@@ -48,7 +48,8 @@ public class Journal
     public void LoadFromFile()
     {
         Console.Write("Please enter the file name you would like to load from: ");
-        String filename = Console.ReadLine();
+        string filename = Console.ReadLine();
+
         try
         {
             using (StreamReader reader = new StreamReader(filename))
@@ -62,11 +63,10 @@ public class Journal
                 }
             }
         }
-        catch (Exception e)
+        catch
         {
-            Console.WriteLine($"Error loading entries from :filename: {e.Message}");
+            Console.WriteLine($"Error loading entries, check filename again. ");
         }
     }
-
 }
 

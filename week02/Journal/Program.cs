@@ -17,7 +17,7 @@ class Program
             Console.WriteLine("4. Save");
             Console.WriteLine("5. Quit");
 
-            Console.Write("Please select an option (1-5) ");
+            Console.Write("What would you like to do? ");
             string choice = Console.ReadLine();
 
             switch (choice)

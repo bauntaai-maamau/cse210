@@ -15,6 +15,8 @@ public class Entry
 
     public void Display()
     {
-        Console.WriteLine($"Date: {_date} - Prompt: {_prompts} {_entryText}");
+        Console.WriteLine($"Date: {_date} - Prompt: {_prompts} ");
+        Console.WriteLine($"{_entryText}");
+        Console.WriteLine();
     }
 }
