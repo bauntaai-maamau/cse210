@@ -32,7 +32,7 @@ public class Reference
 
 
     //return value
-    public string reference()
+    public string ScriptReference()
     {
         if (_endVerse == _verse)
         {
