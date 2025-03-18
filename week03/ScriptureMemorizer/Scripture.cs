@@ -38,22 +38,22 @@ public class Scripture
         Console.Clear();
 
         //optionally display the reference
-        Console.WriteLine(_reference.reference());
+        Console.WriteLine(_reference.ScriptReference());
 
         //display each word in the scripture taking into accout whether it is hidden or not
         Console.WriteLine(string.Join(" ", _words.Select(w => w.Text)));
+    }
+
+    //the ScriptureText method returns the full display text but without clearing the screen
+    public string ScriptureText()
+    {
+        return $"{_reference.ScriptReference()} {string.Join(" ", _words.Select(w => w.Text))}";
     }
 
     //check if all te words in the scriptures are hidden
     public bool AllWordsHidden()
     {
         return _words.All(w => w.IsHidden);
-    }
-
-    //the ScriptureText method returns the full display text but without clearing the screen
-    public string ScriptureText()
-    {
-        return $"{_reference.reference()} {string.Join(" ", _words.Select(w => w.Text))}";
     }
 
     //check if the scripture is completely hidden
