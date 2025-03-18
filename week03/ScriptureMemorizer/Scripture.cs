@@ -14,7 +14,9 @@ public class Scripture
         _words = scriptureText.Split(" ").Select(word => new Word(word)).ToList();
     }
 
-    public bool HideRandomWord()
+
+
+    public void HideRandomWord()
     {
         //get a random word index that is not fully hidden
         Random random = new Random();
@@ -22,24 +24,42 @@ public class Scripture
 
         if (!hiddenWords.Any())
         {
-            return false;
+            return;
         }
 
         //randomly select a word to hide
         var wordToHide = hiddenWords[random.Next(hiddenWords.Count)];
         wordToHide.Hide();
-        return true;
     }
 
+    //display the current scripture with reference and words
     public void DisplayScripture()
     {
         Console.Clear();
-        //Console.WriteLine(_reference.GetReference());
+
+        //optionally display the reference
+        Console.WriteLine(_reference.SingleVerseString());
+
+        //display each word in the scripture taking into accout whether it is hidden or not
         Console.WriteLine(string.Join(" ", _words.Select(w => w.Text)));
     }
 
+    //check if all te words in the scriptures are hidden
     public bool AllWordsHidden()
     {
         return _words.All(w => w.IsHidden);
     }
+
+    //the ScriptureText method returns the full display text but without clearing the screen
+    public string ScriptureText()
+    {
+        return $"{_reference.SingleVerseString()} {string.Join(" ", _words.Select(w => w.Text))}";
+    }
+
+    //check if the scripture is completely hidden
+    public bool IsCompletelyHidden()
+    {
+        return _words.All(w => w.IsHidden);
+    }
+
 }
