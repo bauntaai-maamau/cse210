@@ -31,15 +31,8 @@ public class Reference
     }
 
 
-
     //return value
-    public string SingleVerseString()
-    {
-        string text = $"{_book} {_chapter}:{_verse}";
-        return text;
-    }
-
-    public string MultipleVersesString()
+    public string reference()
     {
         if (_endVerse == _verse)
         {
