@@ -37,7 +37,7 @@ class Program
             //hide random word if 'Enter' is pressed
             if (userInput == "")
             {
-                scripture.HideRandomWord();
+                scripture.HideMultipleWords(2);
                 //bool wordToHide = scripture.HideRandomWord();
                 //if (!wordToHide || scripture.AllWordsHidden())
                 //{
