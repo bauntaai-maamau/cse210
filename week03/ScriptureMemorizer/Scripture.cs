@@ -16,7 +16,7 @@ public class Scripture
 
 
 
-    public void HideRandomWord()
+    public bool HideRandomWord()
     {
         //get a random word index that is not fully hidden
         Random random = new Random();
@@ -24,12 +24,13 @@ public class Scripture
 
         if (!hiddenWords.Any())
         {
-            return;
+            return false;
         }
 
         //randomly select a word to hide
         var wordToHide = hiddenWords[random.Next(hiddenWords.Count)];
         wordToHide.Hide();
+        return true;
     }
 
     //display the current scripture with reference and words
