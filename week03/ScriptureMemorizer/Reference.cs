@@ -11,6 +11,7 @@ public class Reference
     private int _endVerse;
 
 
+
     public Reference(string book, int chapter, int verse)
     {
         _book = book;
@@ -26,4 +27,16 @@ public class Reference
         _endVerse = endVerse;
     }
 
+
+    public string SingleVerseString()
+    {
+        string text = $"{_book} {_chapter}:{_verse}";
+        return text;
+    }
+
+    public string MultipleVersesString()
+    {
+        string text = $"{_book} {_chapter}:{_verse}-{_endVerse}";
+        return text;
+    }
 }
