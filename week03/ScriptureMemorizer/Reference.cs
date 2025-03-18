@@ -2,6 +2,7 @@ using System;
 
 public class Reference
 {
+    //variables 
     private string _book;
 
     private int _chapter;
@@ -12,11 +13,13 @@ public class Reference
 
 
 
+    //constructors
     public Reference(string book, int chapter, int verse)
     {
         _book = book;
         _chapter = chapter;
         _verse = verse;
+        _endVerse = verse;
     }
 
     public Reference(string book, int chapter, int startVerse, int endVerse)
@@ -28,6 +31,8 @@ public class Reference
     }
 
 
+
+    //return value
     public string SingleVerseString()
     {
         string text = $"{_book} {_chapter}:{_verse}";
@@ -36,7 +41,13 @@ public class Reference
 
     public string MultipleVersesString()
     {
-        string text = $"{_book} {_chapter}:{_verse}-{_endVerse}";
-        return text;
+        if (_endVerse == _verse)
+        {
+            return $"{_book} {_chapter}:{_verse}";
+        }
+        else
+        {
+            return $"{_book} {_chapter}:{_verse}-{_endVerse}";
+        }
     }
 }
