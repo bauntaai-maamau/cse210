@@ -32,7 +32,7 @@ public class Word
     {
         get
         {
-            return _isHidden ? "____" : _text;
+            return _isHidden ? "___" : _text;
         }
     }
 }
