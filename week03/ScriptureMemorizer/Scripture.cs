@@ -14,13 +14,6 @@ public class Scripture
         _words = scriptureText.Split(" ").Select(word => new Word(word)).ToList();
     }
 
-    public void DisplayScripture()
-    {
-        Console.Clear();
-        //Console.WriteLine(_reference.GetReference());
-        Console.WriteLine(string.Join(" ", _words.Select(w => w.Text)));
-    }
-
     public bool HideRandomWord()
     {
         //get a random word index that is not fully hidden
@@ -36,6 +29,13 @@ public class Scripture
         var wordToHide = hiddenWords[random.Next(hiddenWords.Count)];
         wordToHide.Hide();
         return true;
+    }
+
+    public void DisplayScripture()
+    {
+        Console.Clear();
+        //Console.WriteLine(_reference.GetReference());
+        Console.WriteLine(string.Join(" ", _words.Select(w => w.Text)));
     }
 
     public bool AllWordsHidden()

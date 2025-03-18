@@ -18,6 +18,12 @@ public class Word
 
 
 
+    //Hide the word
+    public void Hide() => _isHidden = true;
+
+    //Check if the word is hidden
+    public bool IsHidden => _isHidden;
+
     //Get the word or hide if needed
     public string Text
     {
@@ -26,9 +32,4 @@ public class Word
             return _isHidden ? "_____" : _text;
         }
     }
-    //Hide the word
-    public void Hide() => _isHidden = true;
-
-    //Check if the word is hidden
-    public bool IsHidden => _isHidden;
 }
