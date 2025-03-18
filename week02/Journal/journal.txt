@@ -16,9 +16,25 @@ Entry: My cousin Samwise.
 
 Date: 18/03/2025
 Prompt: What is one intereting thing you learn in your scripture personal study today?
-Entry: Hope. 
+Entry: Hope.
 
 Date: 18/03/2025
 Prompt: Write about something that happened for which you are grateful today:
 Entry: Food.
+
+Date: 19/03/2025
+Prompt: Who was the most interesting person you interacted with today?
+Entry: My frend Jason.
+
+Date: 19/03/2025
+Prompt: What did you give thanks for in your morning prayer?
+Entry: Health and Peace.
+
+Date: 19/03/2025
+Prompt: What did you give thanks for in your morning prayer?
+Entry: Bread and Shelter.
+
+Date: 19/03/2025
+Prompt: Write about an experience where you felt the spirit with you today:
+Entry: Scripture studying. 
 
