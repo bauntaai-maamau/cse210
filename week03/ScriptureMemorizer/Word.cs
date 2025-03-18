@@ -19,13 +19,25 @@ public class Word
 
 
     //Hide the word
-    public void Hide() => _isHidden = true;
+    public void Hide()
+    {
+        _isHidden = true;
+    }
 
     //Hide the word
-    public void Show() => _isHidden = false;
+    public void Show()
+    {
+        _isHidden = false;
+    }
 
     //Check if the word is hidden
-    public bool IsHidden => _isHidden;
+    public bool IsHidden
+    {
+        get
+        {
+            return _isHidden;
+        }
+    }
 
     //Get the word or hide if needed
     public string Text
