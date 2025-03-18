@@ -22,4 +22,15 @@ public class Fraction
         _top = top;
         _bottom = bottom;
     }
+
+    public string GetFractionString()
+    {
+        string text = $"{_top}/{_bottom}";
+        return text;
+    }
+
+    public double GetDecimalValue()
+    {
+        return (double)_top / (double)_bottom;
+    }
 }
