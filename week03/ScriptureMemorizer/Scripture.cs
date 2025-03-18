@@ -55,9 +55,6 @@ public class Scripture
         return true;
     }
 
-
-
-
     //display the current scripture with reference and words
     public void DisplayScripture()
     {
