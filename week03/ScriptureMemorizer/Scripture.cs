@@ -15,7 +15,6 @@ public class Scripture
     }
 
 
-
     public bool HideRandomWord()
     {
         //get a random word index that is not fully hidden
@@ -32,6 +31,32 @@ public class Scripture
         wordToHide.Hide();
         return true;
     }
+
+    public bool HideMultipleWords(int count)
+    {
+        Random random = new Random();
+        var hiddenWords = _words.Where(w => !w.IsHidden).ToList();
+
+        if (hiddenWords.Count == 0)
+        {
+            return false;
+        }
+
+        //hide up to 'count' random words
+        int wordsToHide = Math.Min(count, hiddenWords.Count); //dont hide more words than available
+
+        for (int i = 0; i < wordsToHide; i++)
+        {
+            var wordToHide = hiddenWords[random.Next(hiddenWords.Count)];
+            wordToHide.Hide();
+            hiddenWords.Remove(wordToHide); //remove the word from the list so we don't pick it up again
+        }
+
+        return true;
+    }
+
+
+
 
     //display the current scripture with reference and words
     public void DisplayScripture()
