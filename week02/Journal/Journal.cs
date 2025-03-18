@@ -34,9 +34,11 @@ public class Journal
 
     public void SaveToFile(string fileName)
     {
-        using (StreamWriter writer = new StreamWriter(fileName, append: true))
+
+        using (StreamWriter writer = new StreamWriter(fileName, append: false))
         {
             foreach (var entry in entries)
+
             {
                 writer.WriteLine($"Date: {entry._date}");
                 writer.WriteLine($"Prompt: {entry._prompts}");
@@ -54,6 +56,7 @@ public class Journal
 
         try
         {
+
             using (StreamReader reader = new StreamReader(filename))
             {
                 while (!reader.EndOfStream)
@@ -86,7 +89,4 @@ public class Journal
             Console.WriteLine("Error loading entries: File not found. Please check the filename.");
         }
     }
-
-
-
 }
