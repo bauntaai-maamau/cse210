@@ -36,5 +36,13 @@ Entry: Bread and Shelter.
 
 Date: 19/03/2025
 Prompt: Write about an experience where you felt the spirit with you today:
-Entry: Scripture studying. 
+Entry: Scripture studying.
+
+Date: 19/03/2025
+Prompt: Write about something that happened for which you are grateful today:
+Entry: waking up.
+
+Date: 19/03/2025
+Prompt: What is one intereting thing you learn in your scripture personal study today?
+Entry: Prayerful.
 
