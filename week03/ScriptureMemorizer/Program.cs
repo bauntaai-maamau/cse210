@@ -5,9 +5,9 @@ class Program
     static void Main(string[] args)
     {
         //define reference and scripture
-        Reference reference = new Reference("John", 3, 16);
-        string ScriptureText = "For God so love the world that He gave his only begotten Son.";
-
+        Reference reference = new Reference("2 Nephi", 25, 29);
+        string ScriptureText = "And now behold, I say unto you that the right way is to believe in Christ, and deny him not; and Christ is the Holy One of Israel; wherefore ye must bow down before him, and worship him with all your might, mind, and strength, and your whole soul; and if ye do this ye shall in nowise be cast out.";
+        
         //create a new scripture with the reference and text
         Scripture scripture = new Scripture(reference, ScriptureText);
 
@@ -37,7 +37,7 @@ class Program
             //hide random word if 'Enter' is pressed
             if (userInput == "")
             {
-                scripture.HideMultipleWords(2);
+                scripture.HideMultipleWords(3);
                 //bool wordToHide = scripture.HideRandomWord();
                 //if (!wordToHide || scripture.AllWordsHidden())
                 //{
