@@ -51,14 +51,4 @@ public class Product
         return Math.Round(_price * _quantity, 2);
     }
 
-
-    // A method to display the product's details
-    public void DisplayProductInfo()
-    {
-        Console.WriteLine($"Product: {_product}");
-        Console.WriteLine($"ID: {_id}");
-        Console.WriteLine($"Price: {_price}");
-        Console.WriteLine($"Quantity: {_quantity}");
-    }
-
 }
