@@ -29,18 +29,6 @@ public class Order
         _shippingCost = customer.LivesInUSA() ? 5 : 35;  // Determine shipping cost based on USA or not
     }
 
-    // Method to get the total breakdown (product cost + shipping cost)
-    public string GetTotalBreakdown()
-    {
-        double productTotal = 0;
-        foreach (var product in _products)
-        {
-            productTotal += product.GetTotalCost();  // Get total cost of each product (Price * Quantity)
-        }
-
-        // Returning the detailed breakdown of the total as a string
-        return $"Total Products Cost: ${productTotal}\nShipping Cost: ${_shippingCost}\nTotal Cost: ${productTotal + _shippingCost}";
-    }
 
     // Method to generate the packing label (product name and product ID)
     public string PackingLabel()
@@ -53,10 +41,27 @@ public class Order
         return label.Trim();  // Trim extra space or newlines
     }
 
+
+
     // Method to generate the shipping label (customer's name and full address)
     public string ShippingLabel()
     {
         return $"\nShipping Label\nName: {_customer.CustomerName}\nAddress:\n{_customer.CustomerAddress.GetFullAddress()}\n";
+    }
+
+
+
+    // Method to get the total breakdown (product cost + shipping cost)
+    public string GetTotalBreakdown()
+    {
+        double productTotal = 0;
+        foreach (var product in _products)
+        {
+            productTotal += product.GetTotalCost();  // Get total cost of each product (Price * Quantity)
+        }
+
+        // Returning the detailed breakdown of the total as a string
+        return $"Total Products Cost: ${productTotal}\nShipping Cost: ${_shippingCost}\nTotal Cost: ${productTotal + _shippingCost}\n";
     }
 }
 
