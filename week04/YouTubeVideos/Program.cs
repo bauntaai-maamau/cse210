@@ -4,29 +4,48 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Create a video object
-        Video myvideo = new Video("How to program in C#", "Peter Parker", 600);
-
-        // Add some comments to the video
-        Comment myComment1 = new Comment("Jane", "Great tutorial! Very helpful.");
-        Comment myComment2 = new Comment("Alice", "I learned so much, thank you!");
-        Comment myComment3 = new Comment("Bob", "Nice explanation, but could use more examples.");
+    
+        // Create multiple videos
+        Video video1 = new Video("Piano Basics", "Peter Parker", 1200);
+        Video video2 = new Video("30 Minutes Aerobic Exercise", "Bruce Wayne", 1830);
+        Video video3 = new Video("How to loose 20lbs in 2 days!", "Anne Frazer", 1830);
 
 
-        //Add comment to the video
-        myvideo.AddComment(myComment1);
-        myvideo.AddComment(myComment2);
-        myvideo.AddComment(myComment3);
+
+        // Add comments to video1
+        Comment comment1 = new Comment("Atanroroa", "I found it a bit difficult as a beginner. Could use more basic examples.");
+        Comment comment2 = new Comment("Kaititaake", "I took lessons for ten years as a kid/teen and remember notes but I do not remember how to play. Your course is great. I am so glad I found it. Thanks so much. ");
+        video1.AddComment(comment1);
+        video1.AddComment(comment2);
 
 
-        // Display all the comments
-        myvideo.DisplayVideoInfo();
 
-        Console.WriteLine();
+        // Add comments to video2
+        Comment comment3 = new Comment("Kaeroa", "This workout is perfect! Quick, effective, and easy to do at home—exactly what I needed!");
+        Comment comment4 = new Comment("Tineta", "That was great! iv been getting into fitness for about 5 weeks now, (first time in my life) and i was even surprised i could do the hole video plus  the warm up! Thank you so much for this video cant wait to try out more!");
+        Comment comment5 = new Comment("Holloway", "This is helping through my depression! so grateful to you.");
+        Comment comment6 = new Comment("John Cena", "Awesome 30 minutes. Love the variety. Thank you!");
+        video2.AddComment(comment3);
+        video2.AddComment(comment4);
+        video2.AddComment(comment5);
+        video2.AddComment(comment6);
 
+
+
+        // Create a list of videos
+        List<Video> videos = new List<Video> { video1, video2, video3 };
+
+
+
+        // Display all video info and comments
+        foreach (var video in videos)
+        {
+            video.DisplayVideoInfo();
+            Console.WriteLine();
+            Console.WriteLine("--------------------------------------------------------------------------------\n");
+        }
     }
 
 }
-
 
 
