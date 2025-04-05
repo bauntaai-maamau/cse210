@@ -4,7 +4,7 @@ public class Product
 {
     private string _product;
     private string _id;
-    private int _price;
+    private double _price;
     private int _quantity;
 
 
@@ -22,7 +22,7 @@ public class Product
         set { _id = value; }
     }
 
-    public int Price
+    public double Price
     {
         get { return _price; }
         set { _price = value; }
@@ -36,12 +36,19 @@ public class Product
 
 
 
-    public Product(string product, string id, int price, int quantity)
+    public Product(string product, string id, double price, int quantity)
     {
         _product = product;
         _id = id;
         _price = price;
         _quantity = quantity;
+    }
+
+
+    // Method to compute the total cost of the product (Price * Quantity)
+    public double GetTotalCost()
+    {
+        return Math.Round(_price * _quantity, 2);
     }
 
 
@@ -53,13 +60,5 @@ public class Product
         Console.WriteLine($"Price: {_price}");
         Console.WriteLine($"Quantity: {_quantity}");
     }
+
 }
-
-
-    
-
-    
-
-
-    
-

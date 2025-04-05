@@ -4,20 +4,49 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        // Create a Product object
-        Product myProduct = new Product("Laptop", "P123", 1000, 10);
 
-        // Access and modify properties
-        Console.WriteLine("\nBefore update:");
-        myProduct.DisplayProductInfo();
+        // Create Address object for the customer
+        Address customerAddress = new Address("Nukan te Wa, Betio", "Tarawa", "Gilbert Islands", "Kiribati");
 
-        // Update the price and quantity using properties
-        myProduct.Price = 900;  // Updating price
-        myProduct.Quantity = 12;  // Updating quantity
+        // Create Customer object with address
+        Customer customer = new Customer("Mokata Tiira", customerAddress);
 
-        Console.WriteLine("\nAfter update:");
-        myProduct.DisplayProductInfo();
+        // Create Product object
+        Product myproduct = new Product("Phone Cover", "P123", 39.15, 3);
+
+        
+
+
+
+
+        // Display customer information
+        Console.WriteLine($"Customer: {customer.CustomerName}");
+        Console.WriteLine($"Address:\n{customer.CustomerAddress.GetFullAddress()}");
+        Console.WriteLine($"Lives in USA: {customer.LivesInUSA()}");
+
+
+        // Display product information
+        Console.WriteLine($"\nProduct: {myproduct.ProductName}");
+        Console.WriteLine($"Product ID: {myproduct.Id}");
+        Console.WriteLine($"Price per unit: {myproduct.Price}");
+        Console.WriteLine($"Quantity: {myproduct.Quantity}");
+        Console.WriteLine($"Total cost: {myproduct.GetTotalCost()}");
 
         Console.WriteLine();
     }
 }
+
+
+
+
+
+        
+
+        
+
+        
+
+        
+
+        
+

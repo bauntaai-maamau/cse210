@@ -3,7 +3,7 @@ using System;
 public class Customer
 {
     private string _customerName;
-    public class Address;
+    public Address CustomerAddress { get; set; }
 
 
 
@@ -16,8 +16,18 @@ public class Customer
 
 
 
-    public Customer(string customer)
+    public Customer(string customername, Address address)
     {
-        _customerName = customer;
+        _customerName = customername;
+        CustomerAddress = address;
     }
+
+
+
+    // Method to check if the customer lives in the USA
+    public bool LivesInUSA()
+    {
+        return CustomerAddress.IsInUSA(); // Call IsInUSA method from the Address class
+    }
+
 }
