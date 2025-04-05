@@ -7,6 +7,7 @@ public class Order
     public Customer _customer { get; set; }
     private double _shippingCost;
 
+
     // Public properties to control access to the private fields
     public List<Product> Products
     {
@@ -14,12 +15,15 @@ public class Order
         set { _products = value; }
     }
 
+
     // Property to get and set the shipping cost
     public double ShippingCost
     {
         get { return _shippingCost; }
         set { _shippingCost = value; }
     }
+
+
 
     // Constructor to initialize the order with a customer and a list of products
     public Order(Customer customer, List<Product> products)
