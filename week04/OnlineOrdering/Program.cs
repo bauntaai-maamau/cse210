@@ -2,38 +2,36 @@ using System;
 
 public class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
+        // Create Address
+        Address address = new Address("123 Elm St", "Springfield", "IL", "USA");
 
-        // Create Address object for the customer
-        Address customerAddress = new Address("Nukan te Wa, Betio", "Tarawa", "Gilbert Islands", "Kiribati");
+        // Create Customer
+        Customer customer = new Customer("John Doe", address);
 
-        // Create Customer object with address
-        Customer customer = new Customer("Mokata Tiira", customerAddress);
+        // Create Products
+        Product product1 = new Product("Laptop", "P001", 799.99, 1);
+        Product product2 = new Product("Headphones", "P002", 49.99, 2);
 
-        // Create Product object
-        Product myproduct = new Product("Phone Cover", "P123", 39.15, 3);
+        // Create a list of products
+        List<Product> products = new List<Product> { product1, product2 };
 
-        
+        // Create Order
+        Order order = new Order(customer, products);
 
-
-        // Display customer information
-        Console.WriteLine($"\nCustomer: {customer.CustomerName}");
-        Console.WriteLine($"Address:\n{customer.CustomerAddress.GetFullAddress()}");
-        Console.WriteLine($"Lives in USA: {customer.LivesInUSA()}");
-
-
-        // Display product information
-        Console.WriteLine($"\nProduct: {myproduct.ProductName}");
-        Console.WriteLine($"Product ID: {myproduct.Id}");
-        Console.WriteLine($"Price per unit: {myproduct.Price}");
-        Console.WriteLine($"Quantity: {myproduct.Quantity}");
-        Console.WriteLine($"Total cost: {myproduct.GetTotalCost()}");
-
+        // Display the Packing Label
         Console.WriteLine();
+        Console.WriteLine(order.PackingLabel());
+
+        // Display the Shipping Label
+        Console.WriteLine(order.ShippingLabel());
+
+        // Display the Total Breakdown
+        Console.WriteLine(order.GetTotalBreakdown());
+
+        Console.WriteLine("\n--------------------------------------------\n");
     }
 }
-
-
 
 
