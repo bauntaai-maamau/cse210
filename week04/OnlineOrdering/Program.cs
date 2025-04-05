@@ -2,7 +2,7 @@ using System;
 
 public class Program
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
 
         // Create Address object for the customer
@@ -15,8 +15,6 @@ public class Program
         Product myproduct = new Product("Phone Cover", "P123", 39.15, 3);
 
         
-
-
 
 
         // Display customer information
@@ -38,15 +36,4 @@ public class Program
 
 
 
-
-
-        
-
-        
-
-        
-
-        
-
-        
 
