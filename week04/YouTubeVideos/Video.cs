@@ -3,16 +3,16 @@ using System;
 public class Video
 {
     public string _title;
-    public string _author;
+    public string _uploader;
     public int _lengthsInSeconds;
     private List<Comment> _comments;
 
 
 
-    public Video(string title, string author, int lengthInSeconds)
+    public Video(string title, string uploader, int lengthInSeconds)
     {
         _title = title;
-        _author = author;
+        _uploader = uploader;
         _lengthsInSeconds = lengthInSeconds;
         _comments = new List<Comment>();
     }
@@ -51,7 +51,7 @@ public class Video
     public void DisplayVideoInfo()
     {
         Console.WriteLine($"\nTitle: {_title}");
-        Console.WriteLine($"Author: {_author}");
+        Console.WriteLine($"Author: {_uploader}");
         Console.WriteLine($"Length: {_lengthsInSeconds} seconds");
         Console.WriteLine($"Number of comments: {GetNumberOfComments()}\n");
         DisplayComments();
