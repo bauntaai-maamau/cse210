@@ -2,12 +2,22 @@ using System;
 
 public class Customer
 {
-    private string _customer;
+    private string _customerName;
     public class Address;
 
 
-    // public Customer(string customer, )
-    // {
-    //     _customer = customer;
-    // }
+
+    // Public properties to control access to the private fields
+    public string CustomerName
+    {
+        get { return _customerName; }
+        set { _customerName = value; }
+    }
+
+
+
+    public Customer(string customer)
+    {
+        _customerName = customer;
+    }
 }
