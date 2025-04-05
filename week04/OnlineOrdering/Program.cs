@@ -20,7 +20,7 @@ public class Program
 
 
         // Display customer information
-        Console.WriteLine($"Customer: {customer.CustomerName}");
+        Console.WriteLine($"\nCustomer: {customer.CustomerName}");
         Console.WriteLine($"Address:\n{customer.CustomerAddress.GetFullAddress()}");
         Console.WriteLine($"Lives in USA: {customer.LivesInUSA()}");
 
