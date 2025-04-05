@@ -11,8 +11,8 @@ public class Program
         var address4 = new Address("Brigham Young University", "Laie", "HI", "United States");
 
         // Create customers with their respective addresses
-        var customer1 = new Customer("John Doe", address1);
-        var customer2 = new Customer("Jane Smith", address2);
+        var customer1 = new Customer("John Carter", address1);
+        var customer2 = new Customer("Denzel Washington", address2);
         var customer3 = new Customer("Mokata Will", address3);
         var customer4 = new Customer("Taai M", address4);
 
